@@ -2,7 +2,9 @@
 //  ServiceProtocol.swift
 //  Flickr
 //
-//  Created by Eduardo Fornari on 06/06/24.
+//  Created by Eduardo Fornari on 07/06/24.
 //
 
-import Foundation
+protocol ServiceProtocol {
+    func fetchPosts(searchText: String) async -> Result<Posts, Error>
+}

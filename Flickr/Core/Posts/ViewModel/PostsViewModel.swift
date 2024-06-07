@@ -1,3 +1,10 @@
+//
+//  PostsViewModel.swift
+//  Flickr
+//
+//  Created by Eduardo Fornari on 07/06/24.
+//
+
 import Foundation
 
 @MainActor
@@ -24,15 +31,12 @@ final class PostsViewModel: ObservableObject {
 
     init(service: ServiceProtocol) {
         self.service = service
-        Task {
-            await loadData()
-        }
     }
 
     private func loadData() async {
         var searchText = searchText
         searchText = searchText.replacingOccurrences(of: " ", with: ",")
-        searchText = searchText.removeMultipleChar(char: ",")
+        searchText = searchText.removeMultiple(char: ",")
         let result = await service.fetchPosts(searchText: searchText.replacingOccurrences(of: " ", with: ","))
         switch result {
         case let .success(model):

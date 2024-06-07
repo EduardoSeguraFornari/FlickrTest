@@ -1,5 +1,5 @@
 //
-//  PostDetailsViewModel.swift
+//  PostsGridView.swift
 //  Flickr
 //
 //  Created by Eduardo Fornari on 07/06/24.

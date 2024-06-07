@@ -20,7 +20,7 @@ final class PostsViewModelTests: XCTestCase {
     @MainActor func testLoadData() {
         let expectation = expectation(description: "models property updated")
 
-        // When searchText chenge
+        // When searchText change
         sut.searchText = "A"
 
         // Then the data is updated
